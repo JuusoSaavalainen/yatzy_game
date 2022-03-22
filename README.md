@@ -8,6 +8,6 @@
 
 vai vai paikallinen muutos
 
-[gitlog.txt](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/laskarit/laskarit/gitlog.txt)
+[gitlog.txt](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/laskarit/viikko1/gitlog.txt)
 
-[komentorivi.txt](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/laskarit/laskarit/komentorivi.txt)
+[komentorivi.txt](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/laskarit/viikko1/komentorivi.txt)
