@@ -2,7 +2,7 @@
 
 ## Tehtävät/Laskarit
 
-## VK1
+## Vk1
 
 [gitlog.txt](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/laskarit/viikko1/gitlog.txt)
 
