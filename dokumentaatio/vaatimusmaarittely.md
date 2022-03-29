@@ -18,15 +18,15 @@ Sovellus aukeaa näkymään josta voidaan tarkastella **Highscoreja** tai **aloi
 
 ## Perusversion tarjoama toiminnallisuus
 
-## Aloitusvalikko
+### Aloitusvalikko
 - Käyttäjä voi siirtyä tarkastelemaan parhaita tuloksia laskevassa järjestyksessä 
 - Käyttäjä voi siirtyä pelaamaan / valitsemaan pelaajien määrä
 
-## Pelaajien valinta
+### Pelaajien valinta
 - Käyttäjä/Käyttäjät voivat syöttää nimimerkkin jolle pisteet kirjataan
 - Nimimerkkien määrän mukaan voidaan aloittaa joko kaksinpeli tai yksinpeli
 
-## Peli
+### Peli
 - Käyttäjä voi vuorollaan heittää noppia 3 kertaa sekä valita säästettäviä noppia ensi kierrokselle
 - Käyttäjä voi päättää vuoron ennen 3 heittoa.
 - Käyttäjä voi tilanteessa jossa mikään luokka ei sovi saatuihin noppiin päättää ~~ylivaamisen~~ kohteen.
@@ -35,11 +35,14 @@ Sovellus aukeaa näkymään josta voidaan tarkastella **Highscoreja** tai **aloi
 - Pelin aikainen pelin päättäminen
 - Pelin loputtua uusintapelin mahdollisuus
 
-# Highscores
+### Highscores
 - Yksinkertainen näkymä jossa käyttäjä voi tarkastella parhaita tuloksia
 
 
 ## Jatkokehitysideoita
+
+Mahdollisuuksien mukaan sovellusta/peliä voitaisiin vielä parantaa esim näin:
+
 - Aloitusvalikossa sekä pelinaikaisesta näkymästä mahdollisuus tarkastella MatchHistoryä 
 - Highscorejen detailed view
 - Käyttäjä voi vaikuttaa pelin sääntöihin (Esim : Reaaliaikainen pistelaskuri)
