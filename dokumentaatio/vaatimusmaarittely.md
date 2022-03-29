@@ -12,7 +12,7 @@ Yksi käyttäjärooli _norm käyttäjä_.
 
 Sovellus koostuu 4 näkymästä.
 
-![](./kuvat/kayttoliittymanluonnos.png)
+![](./kuvat/kayttoliittymaluonnos.png)
 
 Sovellus aukeaa näkymään josta voidaan tarkastella **Highscoreja** , **Kirjautua sisään**/**LOGIN** sekä rekistöröityä. Kirjautuminen hoidetaan alkunäkymässä, rekistöröinti vie toiseen ikkunaan. Tämän jälkeen rekistöröity nimi ja salasana sekä painikkeen **LOGIN** painaminen vie peliin jossa itse peli on toteutettu. Pelin päättymisen jälkeen on mahdollisuus ottaa uusintaottelu tai lopettaa. Myös **Highscorejen** tarkastelu on mahdollista.   
 
