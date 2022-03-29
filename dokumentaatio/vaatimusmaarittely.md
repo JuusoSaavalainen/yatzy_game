@@ -12,7 +12,7 @@ Yksi käyttäjärooli _norm käyttäjä_.
 
 Sovellus koostuu 4 näkymästä. (Mahdollisuuksien ja ajan mukaan myös 5 tai jopa 6 näkymää on mahdollista toteuttaa)
 
-#TODO LISÄÄ KUVA
+![](./kuvat/kayttoliittymanluonnos.png)
 
 Sovellus aukeaa näkymään josta voidaan tarkastella **Highscoreja** tai **aloittaa peli**. Pelin aloittaminen vie näkymään jossa kirjataan pelaajien nimet ja samalla saadaan tieto siitä pelataanko peliä yksin vai esim kahdestaan vastakkain. Tämän jälkeen **Start!** vie peliin jossa itse peli on toteutettu. Pelin päättymisen jälkeen on mahdollisuus ottaa uusintaottelu tai lopettaa. Myös **Highscorejen** tarkastelu on mahdollista.   
 
