@@ -2,7 +2,7 @@
 
 ## Vk 3
 
-## Main improvements -> UI , SQL , (REPOS)
+### Main improvements -> UI , SQL , (REPOS)
 
 - Tkinter käyttöliittymän runko rakennettu (LOGIN/REGISTER)
 - Käyttöliittymän buttoneihin saatu toiminnallisuutta
