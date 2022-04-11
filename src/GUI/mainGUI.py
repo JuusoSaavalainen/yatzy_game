@@ -1,15 +1,14 @@
 
-import re
+
 import sqlite3
-from data import database_connection
-from data import intialize_database
+from data.database_connection import get_database_connection
+from data.intialize_database import initialize_database
 from GUI.login import Login
 #from highscores import Highscores
 from GUI.register import Register
 from repot.yatzyrepo import Loginrepo
 
-from tkinter import ttk, constants, Tk , Frame
-import tkinter
+from tkinter import ttk, constants, Tk, Frame
 
 
 class GUI:
@@ -19,19 +18,18 @@ class GUI:
 
     def start(self):
         self._show_login()
-    
+
     def _handle_play(self):
         print("NOW IF EVERYTHING IS RIGHT GAME WILL START")
-    
-    def _handle_register(self,varU,varP):
+
+    def _handle_register(self, varU, varP):
         sqliteConnection = get_database_connection()
         A = Loginrepo(sqliteConnection)
         A.create_acc()
 
-
     def _handle_back(self):
         self._show_login()
-    
+
     def _show_login(self):
         self._hide_current_view()
         self._current_view = Login(
@@ -49,10 +47,8 @@ class GUI:
             self._handle_back
         )
         self._current_view.pack()
- 
+
     def _hide_current_view(self):
         if self._current_view:
             self._current_view.destroy()
         self._current_view = None
-    
-
