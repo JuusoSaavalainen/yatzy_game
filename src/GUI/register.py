@@ -1,6 +1,8 @@
+import imp
+from tkinter import ttk , constants
 from data.database_connection import get_database_connection
 from repot import yatzyrepo
-from tkinter import ttk, constants, Tk, StringVar
+
 
 
 class Register:

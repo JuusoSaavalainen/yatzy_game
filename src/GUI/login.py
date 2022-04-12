@@ -1,6 +1,3 @@
-from tkinter import Entry, ttk, constants
-
-
 class Login:
     def __init__(self, root, handle_play, show_register):
         self._root = root
