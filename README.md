@@ -11,13 +11,13 @@
 
 [arkkitehtuuri.md](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/dokumentaatio/arkkitehtuuri.md)
 
-## Asennus
+## Asentaminen
 
 1. Asenna riippuvuudet näin:
 
 poetry install
 
-## Komentorivitoiminnot
+## Komentorivin toiminnot
 
 1. Käynnistä Yatzy komennolla:
 
