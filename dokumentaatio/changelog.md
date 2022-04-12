@@ -15,10 +15,10 @@
 
 ### Main improvements -> Logiikkaa , Pygame 
 
--Pygamella oikean pelin tekoa aloitettu
--Import ongelmia korjattu
--Toimivia testejä tehty
--Sovelluslogiikkaa aloitettu
--Gamelooppi luotu ja itse peli käynnistyy
--Spritejä luotu sekä alkeellista grafiikkaa lisätty
--Roll_dice luotu, noppien heittäminen mahdollista
+- Pygamella oikean pelin tekoa aloitettu
+- Import ongelmia korjattu
+- Toimivia testejä tehty
+- Sovelluslogiikkaa aloitettu
+- Gamelooppi luotu ja itse peli käynnistyy
+- Spritejä luotu sekä alkeellista grafiikkaa lisätty
+- Roll_dice luotu, noppien heittäminen mahdollista
