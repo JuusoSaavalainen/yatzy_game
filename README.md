@@ -30,3 +30,7 @@ poetry install
 3. Testikattavuusraportti voidaan generoida komennolla:
 
 - poetry run invoke coverage-report
+
+4. Pylint raportti:
+
+- poetry run invoke lint
