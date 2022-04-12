@@ -1,14 +1,8 @@
-
 import pygame
 import os
-from load_image import load_image
+from src.load_image import load_image
 
-
-# path to file
 direc_name = os.path.dirname(__file__)
-
-# Class for dice sprite
-
 
 class Collect(pygame.sprite.Sprite):
     def __init__(self, x=0, y=0):

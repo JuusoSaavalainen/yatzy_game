@@ -1,4 +1,4 @@
-from data.database_connection import get_database_connection
+from ..data.database_connection import get_database_connection
 from GUI.login import Login
 from GUI.register import Register
 from repot.yatzyrepo import Loginrepo

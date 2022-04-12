@@ -1,9 +1,8 @@
 import pygame
 import random
-from sprites import *
-from sprites.collect import Collect
-from sprites.dice import Dice
-from sprites.roll import Roll
+from src.sprites.collect import Collect
+from src.sprites.dice import Dice
+from src.sprites.roll import Roll
 
 
 class Draw:
@@ -15,10 +14,8 @@ class Draw:
         self.dice5 = pygame.sprite.Group()
         self.dice6 = pygame.sprite.Group()
         self.collect = pygame.sprite.Group()
-        self.roll = None
-        self.dices = pygame.sprite.Group()
-
         self.all_sprites = pygame.sprite.Group()
+        self.dices = pygame.sprite.Group()
 
         self._intialize_sprites(yatzy_board)
 
@@ -26,7 +23,7 @@ class Draw:
 
         self.dice1.add(Dice(100, 0, 1))
         self.dice2.add(Dice(200, 0, 1))
-        self.dice3.add(Dice(300, 0, 2))
+        self.dice3.add(Dice(300, 0, 1))
         self.dice4.add(Dice(400, 0, 1))
         self.dice5.add(Dice(500, 0, 1))
         self.dice6.add(Dice(600, 0, 1))
@@ -54,7 +51,6 @@ class Draw:
 
     def roll_dice(self, x, y):
         if self.roll.rect.collidepoint(x, y):
-            print('meneekö')
             for dice in self.dices:
                 dice.number = random.randint(1, 6)
                 dice.update()

@@ -1,7 +1,7 @@
 
 import pygame
 import os
-from load_image import load_image
+from src.load_image import load_image
 
 
 # path to file
