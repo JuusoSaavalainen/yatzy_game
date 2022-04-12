@@ -21,12 +21,12 @@ poetry install
 
 1. Käynnistä Yatzy komennolla:
 
-poetry run invoke start
+- poetry run invoke start
 
 2. Testien ajo onnistuu komennolla:
 
-poetry run invoke test
+- poetry run invoke test
 
 3. Testikattavuusraportti voidaan generoida komennolla:
 
-poetry run invoke coverage-report
+- poetry run invoke coverage-report
