@@ -2,13 +2,19 @@ import pygame
 
 
 class GameLoop:
-    def __init__(self, draw, renderer, clock, event_queue):
+    def __init__(self, draw, renderer, clock, event_queue,dp):
         self._draw = draw
         self._clock = clock
         self._renderer = renderer
         self._event_queue = event_queue
+        self._dp = dp
+        self._play_again = False
 
     def start(self):
+        self._draw.first_roll()
+        self._draw.print_rules()
+        self._draw.print_scoreboard()
+        
         while True:
             if self._traverse_event() is False:
                 break
@@ -22,8 +28,16 @@ class GameLoop:
                 mouse_x, mouse_y = event.pos[0], event.pos[1]
 
                 if event.button == 1:
-                    self._draw.roll_dice(mouse_x, mouse_y)
+                    self._draw.roll_dice(mouse_x, mouse_y, ('a'))
+                    self._draw.get_hand(mouse_x, mouse_y)
+                    
+            if event.type == pygame.KEYDOWN:
+                
+                self._draw.select_dice(event.key)
+                self._draw.unlock(event.key)
+                self._draw.roll_dice(1, 1, event.key)
 
+            
             elif event.type == pygame.QUIT:
                 return False
 

@@ -1,13 +1,13 @@
-import logik
 import pygame
-import gameloop
-from GUI.mainGUI import *
+from src import logik
+from src import gameloop
+from src.GUI import *
 from tkinter import Tk
-from data.intialize_database import initialize_database
-from gameloop import GameLoop
-from clock import Clock
-from renderer import Renderer
-from eventqueue import EventQueue
+from src.data import intialize_database
+from src.gameloop import GameLoop
+from src.clock import Clock
+from src.renderer import Renderer
+from src.eventqueue import EventQueue
 
 
 def main():
@@ -19,18 +19,17 @@ def main():
     gui.start()
 
     window.mainloop()'''
-    draw = logik.Draw(1000)
+
     dp_height = 1000
     dp_widht = 1000
-
+    pygame.font.init()
     dp = pygame.display.set_mode((dp_widht, dp_height))
-
+    draw = logik.Draw(dp)
     pygame.display.set_caption('Yatzyy!')
-
     event_queue = EventQueue()
     renderer = Renderer(dp, draw)
     clock = Clock()
-    game_loop = GameLoop(draw, renderer, clock, event_queue)
+    game_loop = GameLoop(draw, renderer, clock, event_queue,dp)
 
     pygame.init()
     game_loop.start()

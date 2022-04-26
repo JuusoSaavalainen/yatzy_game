@@ -2,8 +2,10 @@ import pygame
 import os
 from src.load_image import load_image
 
+#file path
 direc_name = os.path.dirname(__file__)
 
+#class to colloct obj
 class Collect(pygame.sprite.Sprite):
     def __init__(self, x=0, y=0):
         super().__init__()

@@ -1,4 +1,4 @@
-import data.database_connection
+from src.data import database_connection
 
 
 def drop_tables(connection):
