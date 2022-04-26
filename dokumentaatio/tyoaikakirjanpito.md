@@ -7,4 +7,9 @@
 | 10.4 | 1    | edellisen viikon ongelmien korjaamista (import) |
 | 11.4 | 4    | logiikan ja itse pelin (pygamella) aloitus |
 | 12.4 | 6    | edellisen päivän aiheiden jatkaminen + testien tekeminen |
-| sum  | 21h  | 
+| 19.4 | 2    | tulostaulun alustus, logiikan parantelu |
+| 22.4 | 2    | lukitus, kierrostenlaskeminen, virheiden korjaus |
+| 12.4 | 6    | sääntöjen luominen, logiikkaan mm: pisteiden laskemisen/merkitseminen aloitus |
+| 12.4 | 8    | sääntöjen lisääminen, logiikan parantelu, tominnallisuuden lisääminen, pisteiden jatko |
+| 12.4 | 2    | koodin siistimistä, testien lisäystä, virheiden tarkistusta |
+| sum  | 41h  |  
