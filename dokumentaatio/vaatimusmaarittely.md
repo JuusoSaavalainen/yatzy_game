@@ -26,13 +26,13 @@ Sovellus aukeaa näkymään josta voidaan tarkastella **Highscoreja** , **Kirjau
 
 ### Kirjautumisen jälkeen
 - Automaattinen pelin aloitus
-- Käyttäjä voi heittää noppia 3 kertaa sekä valita säästettäviä noppia ensi kierrokselle
-- Käyttäjä voi päättää vuoron ennen 3 heittoa.
-- Käyttäjä voi tilanteessa jossa mikään luokka ei sovi saatuihin noppiin päättää ~~ylivaamisen~~ kohteen.
-- Vuoron päätyttyä käyttäjä voi valita sopivista paikoista sijoittaa saadut nopat
-- Käyttäjä voi tarkastella Highscoreja
-- Pelin aikainen pelin päättäminen
-- Pelin loputtua uusintapelin mahdollisuus
+- Käyttäjä voi heittää noppia 3 kertaa sekä valita säästettäviä noppia ensi kierrokselle. TEHTY
+- Käyttäjä voi päättää vuoron ennen 3 heittoa. TEHTY
+- Käyttäjä voi tilanteessa jossa mikään luokka ei sovi saatuihin noppiin päättää ~~ylivaamisen~~ kohteen. TEHTY
+- Vuoron päätyttyä käyttäjä voi valita sopivista paikoista sijoittaa saadut nopat. TEHTY
+- Käyttäjä voi tarkastella Highscoreja.
+- Pelin aikainen pelin päättäminen.
+- Pelin loputtua uusintapelin mahdollisuus.
 
 ### Highscores
 - Yksinkertainen näkymä jossa käyttäjä voi tarkastella parhaita tuloksia
