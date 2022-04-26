@@ -22,3 +22,15 @@
 - Gamelooppi luotu ja itse peli käynnistyy
 - Spritejä luotu sekä alkeellista grafiikkaa lisätty
 - Roll_dice luotu, noppien heittäminen mahdollista
+
+
+## Vk 5
+
+### Main improvements -> Lisää toiminnallisuutta, tulostaulu, lukitus .. 
+
+- Itse pelin toteutusta tehty: vuorot, pisteytys, lukitus..
+- Muutamatesti lisätty, näitä pitäisi tehdä seuraavaksi paljon
+- Säännöt luotu, tulostaulu luotu.
+- Pelattavuutta paranneltu 'space to roll', 'u to unlock' , '1,2,3,4,5 to lock'
+- Logiikkaa lisätty
+ 
