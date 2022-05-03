@@ -1,6 +1,8 @@
 import pygame
 import random
 
+from src.data.database_connection import get_database_connection
+from src.repot.yatzyrepo import Loginrepo
 from src.rules import Checkrules
 from src.yatzy_scoreboard import Scoreboard
 from src.sprites.turns import Turns
@@ -12,8 +14,35 @@ from src.sprites.lock import Lock
 
 
 class Draw:
-    def __init__(self, dp):
+    '''Luokka jonka avulla pelin logiikkaa ylläpidetään ja joitakin komponenttejä piirretään
+    
+    Attributes:
+        name = TO_DO
+        possible_score = list that includes booleans for every possible score
+        selectedlist = list that indicates if dice is lockd 
+        dice_names = list that is used to store values of the hanb
+        score_pointer = pointer that indicates the score that user tries to click
+        draw_pointer = pointer that indicates the place that user is trying to click
+        dp = display of the game
+        calculator = round calculator
+        game_sum = tells the total score of a current game
+        up_score = tells the total score of upperbracket used to show the current upscore
+        counter_up = helps to specify the round and turn
+        rounds = value of avaible rounds in game
 
+    Args:
+        dp = takes the wanted display to use
+        name = currently still working on this  -> will be the username of current player
+    '''
+
+    def __init__(self, dp, name):
+        '''Constructor of the class that also intializes the sprites
+
+        Args:
+        dp = takes the wanted display to use
+        name = currently still working on this  -> will be the username of current player'''
+
+        self.name = name
         self.possible_score = [False,False,False,False,False,False,False,False,False,False,False,False,False]
         self.done_score = [False,False,False,False,False,False,False,False,False,False,False,False,False]
         self.selectedlist = [False,False,False,False,False]
@@ -22,12 +51,10 @@ class Draw:
         self.draw_pointer = -1
         self.dp = dp
         self.calculator = 3
-        self.dice_sum = 0
         self.game_sum = 0
+        self.up_score = 0
         self.counter_up = 0
         self.rounds = 13
-        self.warning = False
-        self.duplicates = False
 
         self.dice1 = pygame.sprite.Group()
         self.dice2 = pygame.sprite.Group()
@@ -103,19 +130,20 @@ class Draw:
         )
 
     def initialize_fonts(self):
+        ''' Method that intializes fonts'''
         self.rulesfont = pygame.font.Font(None, 27)
         self.ggfont = pygame.font.Font(None, 47)
         self.pointfont = pygame.font.Font(None, 30)
 
 
     def print_scoreboard(self):
+        '''Method that draws the scorecard'''
         self.ones = Scoreboard(0,200,'1s', self.done_score[0])
         self.twos = Scoreboard(0,240,'2s', self.done_score[1])
         self.threes = Scoreboard(0,280,'3s', self.done_score[2])
         self.fours = Scoreboard(0,320,'4s', self.done_score[3])
         self.fives = Scoreboard(0,360,'5s', self.done_score[4])
         self.sixes = Scoreboard(0,400,'6s', self.done_score[5])
-        self.upscore = Scoreboard(0,440,'TOTAL UP', False)
         self.bonusbasic = Scoreboard(0,480,'Bonus', False)
         self.uptotal = Scoreboard(0,520,'UPPER TOTAL',False)
         self.threekind = Scoreboard(0,560,'3 of a kind', self.done_score[6])
@@ -132,7 +160,6 @@ class Draw:
         self.fours.drawit(self.dp)
         self.fives.drawit(self.dp)
         self.sixes.drawit(self.dp)
-        self.upscore.drawit(self.dp)
         self.bonusbasic.drawit(self.dp)
         self.uptotal.drawit(self.dp)
         self.threekind.drawit(self.dp)
@@ -143,9 +170,12 @@ class Draw:
         self.yatzee.drawit(self.dp)
         self.chance.drawit(self.dp)
         self.grandtotal.drawit(self.dp)
-
+        pygame.draw.rect(self.dp, (0, 0, 0), pygame.Rect(1,441,350,39))  
+        board_text = self.pointfont.render('To collect bonus upperscore >= 63', True, (15,255,255))
+        self.dp.blit(board_text, (10, 450))
 
     def print_rules(self):
+        '''This method is used to draw the instrucktions to the screen'''
         self.initialize_fonts()
         text = self.rulesfont.render('- You can choose the score to pick or overwrite by clicking the field', True, (255,255,255))
         text2 = self.rulesfont.render('- With *number* keys you can lock dices and with *u* you can unlock all', True, (255,255,255))
@@ -157,7 +187,13 @@ class Draw:
         self.dp.blit(text4,(350,530))
 
     def first_roll(self):
+        '''Method that is avare of the rounds and is used to reset the roll after scoring
+        and for updating the database scores after game ends'''
         if self.rounds == 0:
+            connection = get_database_connection()
+            helper_1 = Loginrepo(connection)
+            helper_1.update_score(self.game_sum,self.name)
+
             text = self.ggfont.render(f'Game over, GG! Your score was {self.game_sum}', True, (255,255,255))
             text2 = self.ggfont.render('insert instructions to playagain here<-', True, (255,255,255))
             self.dp.blit(text,(330,850))
@@ -168,6 +204,11 @@ class Draw:
                         dice.update()
 
     def roll_dice(self, x, y, key):
+        '''This method is used for the regular roll
+        Args:
+            x,y = used for keeping up with the points of screen that are used
+            key = used bcs the space roll option, basicly used to see if spacebar is pressed
+        '''
         if self.rounds > 0 and (self.counter_up + self.rounds) == 13:
             if self.roll.rect.collidepoint(x, y) or key == pygame.K_SPACE:
                 if self.calculator == 1:
@@ -183,6 +224,10 @@ class Draw:
     
 
     def get_hand(self, x, y):
+        ''' Method to collect info about the dices that are currently on screen
+        Args:
+            x,y = to keep up with the clicks on monitor
+        '''
         self.dice_names = []
         for dice in self.dices:
             self.dice_names.append(dice.number)
@@ -192,6 +237,10 @@ class Draw:
 
 
     def select_dice(self, key):
+        '''Method used to set the dices to lock mode
+        Args:
+            Key = indicates the key that is pressed for knowing witch dice to lock
+        '''
         if key == pygame.K_1:
             if self.selectedlist[0]:
                 self.selectedlist[0] = False
@@ -228,6 +277,10 @@ class Draw:
                 lock.update()
 
     def unlock(self, key):
+        '''Method that is used for releasing the lockd dices
+        Args: 
+            key = indicated the pressed key
+        '''
         if key == pygame.K_u:
             for i,lock in enumerate(self.locks):
                 lock.number = 1
@@ -236,6 +289,11 @@ class Draw:
                 
 
     def click_score(self, score, x, y):
+        '''Method used for checking the clicks of the scorecard
+        Args:
+            score = takes in the current score to be used on the choice method as an imput
+            x,y = indicates the position of a click
+        '''
         if 0 <= x <= 300:
             if 200 < x < 400 or 560 < x < 800:
                 if 200 < y < 240:
@@ -280,11 +338,19 @@ class Draw:
                 self.selected_score = self.choice(score, self.score_pointer,self.draw_pointer)
         
     def choice(self,score, score_pointer,draw_pointer):
+        '''Method used for updating the scorecard , checking the avaible score options and
+        handeling the 0 roll situation
+
+        Args:
+            All arguments are just info from the click method to know the parameters
+            for filling the right scores to right places
+        '''
         if self.done_score[score_pointer]:
             return
 
         helpers = Checkrules()
         helper2 = helpers.possibility_all(self.possible_score,score)
+
 
         if helper2[score_pointer]:
             self.numbers.number = 3
@@ -293,9 +359,26 @@ class Draw:
             self.rounds -= 1
             points = helpers.points(score, score_pointer)
             self.done_score[score_pointer] = True
-            text = self.pointfont.render(str(points), True, (255,255,255))
-            self.dp.blit(text,(240,draw_pointer+10))       
+
+            if self.score_pointer <= 5:
+                self.up_score += points
+            
+            if self.up_score >= 63:
+                self.game_sum += 50
+                self.up_score += 50
+                bonus = self.pointfont.render(('50'), True, (255,255,255))
+                self.dp.blit(bonus,(240,490))
+
+            self.done_score[score_pointer] = True
             self.game_sum += points
+            text = self.pointfont.render(str(points), True, (255,255,255))
+            text2 = self.pointfont.render(str(self.game_sum), True, (255,155,155))
+            text3 = self.pointfont.render(str(self.up_score), True, (255,155,155))
+            pygame.draw.rect(self.dp, (0, 0, 0), pygame.Rect(201,841,98,37))  
+            pygame.draw.rect(self.dp, (0, 0, 0), pygame.Rect(201,521,98,37))
+            self.dp.blit(text,(240,draw_pointer+10))
+            self.dp.blit(text2,(240,850))
+            self.dp.blit(text3,(240,530))
             self.counter_up += 1
             self.unlock(pygame.K_u)
             self.first_roll()

@@ -1,24 +1,25 @@
-from data.database_connection import *
-import sqlite3
-
-
 class Loginrepo:
     def __init__(self, connection):
         self._connection = connection
 
-    def find_all(self):
+    def create_acc(self, name):
         cursor = self._connection.cursor()
-        cursor.execute("select * from users")
-        rows = cursor.fetchall()
-        return [users(row["username"], row["password"]) for row in rows]
-
-    def create_acc(self, varU, varP):
-        cursor = self._connection.cursor()
-        sqlite_insert_query = """INSERT INTO users
-                            (username, password) 
-                            VALUES 
-                            (?, ?)"""
-        record = (varU, varP)
-        cursor.execute(sqlite_insert_query, record)
+        cursor.execute('INSERT INTO users (username) VALUES 0', [name])
         self._connection.commit()
-        cursor.close()
+        return 'User was created'
+
+    def update_score(self, score, name):
+        cursor = self._connection.cursor()
+        cursor.execute('Update users set score = ? where username = ?', [score, name])
+        self._connection.commit()
+
+    def get_highscores(self):
+        high_score = []
+        print('asdjfnboaisefnoi')
+        cursor = self._connection.cursor()
+        helping_hand = cursor.execute('SELECT * FROM users')
+        rows = helping_hand.fetchall()
+        for row in rows:
+            high_score.append(row)
+        self._connection.commit()
+        return high_score

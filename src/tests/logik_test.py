@@ -5,7 +5,7 @@ import unittest
 #En ole vielä keksinyt miten voin testata kohtia joissa tarvitaan fonttia. Herjaa -> pygame.error: font not initialized
 class TestLogik(unittest.TestCase):
     def setUp(self):
-        self.draw = Draw(1000)
+        self.draw = Draw(1000,'sss')
 
     def test_init_right(self):
         self.assertEqual(len(self.draw.dices),5)

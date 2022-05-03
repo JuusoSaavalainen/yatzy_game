@@ -1,6 +1,6 @@
 import pygame
 
-
+#todo commenting
 class GameLoop:
     def __init__(self, draw, renderer, clock, event_queue,dp):
         self._draw = draw
