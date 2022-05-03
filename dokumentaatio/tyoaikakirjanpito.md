@@ -12,4 +12,5 @@
 | 24.4 | 6    | sääntöjen luominen, logiikkaan mm: pisteiden laskemisen/merkitseminen aloitus |
 | 25.4 | 8    | sääntöjen lisääminen, logiikan parantelu, tominnallisuuden lisääminen, pisteiden jatko |
 | 26.4 | 2    | koodin siistimistä, testien lisäystä, virheiden tarkistusta |
-| sum  | 41h  |  
+| 3.5 | 6    | koodin siistimistä, virheiden tarkistusta, tkinter ja pygame yhteen, sql parantelua, scoreboardin parannusta, highscoren rakentelu |
+| sum  | 47h  |  
