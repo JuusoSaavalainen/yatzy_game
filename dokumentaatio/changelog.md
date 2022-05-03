@@ -33,4 +33,13 @@
 - Säännöt luotu, tulostaulu luotu.
 - Pelattavuutta paranneltu 'space to roll', 'u to unlock' , '1,2,3,4,5 to lock'
 - Logiikkaa lisätty
+
+## Vk 6
+
+### Main improvements -> Tominnalisuuden lisäys (tulostaulu), tkinter+pygame yhdistäminen , highscoren ja tietokannan työstäminen
+
+- Peliin lisätty päivittyvät pisteet scorecardille ja bonus
+- Koodia putsattu ja kommentoitia aloitettu joitain rakenteita poistettu
+- Tkinter ja pygame yhdistetty (työnalla saada vielä kuntoon)
+- Sql toimintojen ja highscoren rakentaminen, salasanojen poisto ja sql rakenteen parantelu/suunnittelu
  
