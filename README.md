@@ -1,5 +1,10 @@
 # Yatzy :game_die: "Peli"
 
+## Pelistä
+
+Jos yatzy pelinä ei ole tuttu tutustuisin itse siihen ensin esim [tämän](https://www.lautapeliopas.fi/saannot/yatzy/) linkin avulla.
+Perusperiaatteeltaan peli on todella yksinkertainen.
+
 ## Dokumentaatio
 
 [Käyttöohje](https://github.com/JuusoSaavalainen/yatzy_game/blob/main/dokumentaatio/kayttoohje.md)
