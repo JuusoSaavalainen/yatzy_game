@@ -42,4 +42,17 @@
 - Koodia putsattu ja kommentoitia aloitettu joitain rakenteita poistettu
 - Tkinter ja pygame yhdistetty (työnalla saada vielä kuntoon)
 - Sql toimintojen ja highscoren rakentaminen, salasanojen poisto ja sql rakenteen parantelu/suunnittelu
+
+## Final release (Vk 7)
+
+### Main improvements -> Restart, highscores, login/register, virheiden käsittely
+
+- Uudelleen käynnistys lisätty
+- Kirjautuminen ja rekistöröinti viety loppuun, esim merkkijonojen pituus, db tallennus ja updateeminen
+- Highscore lisätty kirjautumisnäkymän
+- Help lisätty kirjautumisnäkymään
+- Turhia osia poistettu, koodia tarkastelty kokonaisuutena ja todettu sen olevan logiikan ja piirtämisen osalta paskasta toteutettu
+- Repon toiminta viety loppuuun
+- Pisteytykseen ja sääntöihin lisätty testausta, todettu myös että itse logiikkaa on tietyiltä osin todella vaikeaa testata johtuen mallista.
+
  

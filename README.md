@@ -1,15 +1,17 @@
-# Yatzy "Peli"
-
+# Yatzy :game_die: "Peli"
 
 ## Dokumentaatio
 
-[changelog.md](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/dokumentaatio/changelog.md)
+[Käyttöohje](https://github.com/JuusoSaavalainen/yatzy_game/blob/main/dokumentaatio/kayttoohje.md)
 
-[vaatimusmaarittely.md](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/dokumentaatio/vaatimusmaarittely.md)
+[Changelog](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/dokumentaatio/changelog.md)
 
-[tyoaikakirjanpito.md](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/dokumentaatio/tyoaikakirjanpito.md)
+[Vaatimusmaarittely](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
-[arkkitehtuuri.md](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/dokumentaatio/arkkitehtuuri.md)
+[Tyoaikakirjanpito](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/dokumentaatio/tyoaikakirjanpito.md)
+
+[Arkkitehtuuri](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/dokumentaatio/arkkitehtuuri.md)
+
 
 ## Asentaminen
 
