@@ -19,7 +19,7 @@
 
 1. Asenna riippuvuudet näin:
 
-poetry install
+- poetry install
 
 2. Alusta tietokanta komennolla:
 
