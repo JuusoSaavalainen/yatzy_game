@@ -1,6 +1,7 @@
 import pygame
 
 class Scoreboard:
+    '''This is the class responsive to the drawing of some objects in logik/game'''
     def __init__(self, x, y, text, done):
         self.x = x
         self.y = y
@@ -8,6 +9,7 @@ class Scoreboard:
         self.done = done
 
     def drawit(self,dp):
+        '''the main focus of the class is this method witch sets up and draws'''
         font = pygame.font.Font(None, 30)
         text = font.render(self.text, True, (15,255,255))
         pygame.draw.line(dp,(255,150,10),(self.x, self.y),(self.x + 300, self.y))

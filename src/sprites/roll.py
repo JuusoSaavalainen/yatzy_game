@@ -6,6 +6,8 @@ direc_name = os.path.dirname(__file__)
 
 # Class for roll sprite
 class Roll(pygame.sprite.Sprite):
+    '''Class that could be replaced but
+    it is used to store and call the rolling button'''
     def __init__(self, x=0, y=0):
         super().__init__()
 

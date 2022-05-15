@@ -7,7 +7,6 @@ from src.rules import Checkrules
 from src.yatzy_scoreboard import Scoreboard
 from src.sprites.turns import Turns
 from src.sprites.number import NumValues
-from src.sprites.collect import Collect
 from src.sprites.dice import Dice
 from src.sprites.roll import Roll
 from src.sprites.lock import Lock
@@ -17,7 +16,6 @@ class Draw:
     '''Luokka jonka avulla pelin logiikkaa ylläpidetään ja joitakin komponenttejä piirretään
     
     Attributes:
-        name = TO_DO
         possible_score = list that includes booleans for every possible score
         selectedlist = list that indicates if dice is lockd 
         dice_names = list that is used to store values of the hanb
@@ -35,14 +33,14 @@ class Draw:
         name = currently still working on this  -> will be the username of current player
     '''
 
-    def __init__(self, dp, name):
+
+    def __init__(self, dp):
         '''Constructor of the class that also intializes the sprites
 
         Args:
         dp = takes the wanted display to use
         name = currently still working on this  -> will be the username of current player'''
 
-        self.name = name
         self.possible_score = [False,False,False,False,False,False,False,False,False,False,False,False,False]
         self.done_score = [False,False,False,False,False,False,False,False,False,False,False,False,False]
         self.selectedlist = [False,False,False,False,False]
@@ -85,8 +83,7 @@ class Draw:
         self.dice4.add(Dice(415, 60, 1))
         self.dice5.add(Dice(520, 60, 1))
 
-        self.collect = Collect(750, 100)
-        self.roll = Roll(750, 30)
+        self.roll = Roll(750, 100)
         self.turns = Turns(100,0)
         self.numbers = NumValues(400,0,2)
 
@@ -103,7 +100,6 @@ class Draw:
             self.dice4,
             self.dice5,
             self.roll,
-            self.collect,
             self.turns,
             self.numbers,
             self.lock1,
@@ -171,7 +167,7 @@ class Draw:
         self.chance.drawit(self.dp)
         self.grandtotal.drawit(self.dp)
         pygame.draw.rect(self.dp, (0, 0, 0), pygame.Rect(1,441,350,39))  
-        board_text = self.pointfont.render('To collect bonus upperscore >= 63', True, (15,255,255))
+        board_text = self.pointfont.render('^ Upperscore ^', True, (74,155,74))
         self.dp.blit(board_text, (10, 450))
 
     def print_rules(self):
@@ -181,10 +177,15 @@ class Draw:
         text2 = self.rulesfont.render('- With *number* keys you can lock dices and with *u* you can unlock all', True, (255,255,255))
         text3 = self.rulesfont.render('- Each round you hace 3 rolls and in the whole game you have 13 rounds', True, (255,255,255))
         text4 = self.rulesfont.render('- You can roll the dices by pressing Roll~ or *spacebar*', True, (255,255,255))
-        self.dp.blit(text3,(350,410))
-        self.dp.blit(text,(350,450))     
-        self.dp.blit(text2,(350,490)) 
-        self.dp.blit(text4,(350,530))
+        text5 = self.rulesfont.render('- Bonus can be claimed by having uppertotal > 62', True, (255,255,255))
+        text6 = self.rulesfont.render('- The goal of the game is to obtain as many points as possible', True, (255,255,255))
+        self.dp.blit(text3,(350,290))
+        self.dp.blit(text,(350,330))     
+        self.dp.blit(text2,(350,370)) 
+        self.dp.blit(text4,(350,410))
+        self.dp.blit(text5,(350,450))
+        self.dp.blit(text6,(350,250))
+
 
     def first_roll(self):
         '''Method that is avare of the rounds and is used to reset the roll after scoring
@@ -192,17 +193,19 @@ class Draw:
         if self.rounds == 0:
             connection = get_database_connection()
             helper_1 = Loginrepo(connection)
-            helper_1.update_score(self.game_sum,self.name)
+            helper_1.update_score(self.game_sum)
+            text = self.ggfont.render(f'Game over, GG! Your score was {self.game_sum}', True, (1,255,255))
+            text0 = self.ggfont.render(f'Press right upper corner (X) to exit', True, (1,255,255))
+            text2 = self.ggfont.render('Press "J" to play again! ' , True, (1,255,255))
+            self.dp.blit(text,(330,550))
+            self.dp.blit(text2,(330,600))
+            self.dp.blit(text0,(330,650))
 
-            text = self.ggfont.render(f'Game over, GG! Your score was {self.game_sum}', True, (255,255,255))
-            text2 = self.ggfont.render('insert instructions to playagain here<-', True, (255,255,255))
-            self.dp.blit(text,(330,850))
-            self.dp.blit(text2,(330,900))
         for i,dice in enumerate(self.dices):
                     if self.selectedlist[i] != True:
                         dice.number = random.randint(1, 6)
                         dice.update()
-
+                        
     def roll_dice(self, x, y, key):
         '''This method is used for the regular roll
         Args:
@@ -373,7 +376,7 @@ class Draw:
             self.game_sum += points
             text = self.pointfont.render(str(points), True, (255,255,255))
             text2 = self.pointfont.render(str(self.game_sum), True, (255,155,155))
-            text3 = self.pointfont.render(str(self.up_score), True, (255,155,155))
+            text3 = self.pointfont.render(str(self.up_score), True, (74,155,74))
             pygame.draw.rect(self.dp, (0, 0, 0), pygame.Rect(201,841,98,37))  
             pygame.draw.rect(self.dp, (0, 0, 0), pygame.Rect(201,521,98,37))
             self.dp.blit(text,(240,draw_pointer+10))

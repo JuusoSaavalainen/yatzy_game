@@ -17,20 +17,27 @@
 
 poetry install
 
-## Komentorivin toiminnot
+2. Alusta tietokanta komennolla:
+
+- poetry run invoke clean
+
+
+## Pelin käynnistäminen
 
 1. Käynnistä Yatzy komennolla:
 
 - poetry run invoke start
 
-2. Testien ajo onnistuu komennolla:
+## Testaaminen
+
+1. Testien ajo onnistuu komennolla:
 
 - poetry run invoke test
 
-3. Testikattavuusraportti voidaan generoida komennolla:
+2. Testikattavuusraportti voidaan generoida komennolla:
 
 - poetry run invoke coverage-report
 
-4. Pylint raportti:
+3. Pylint raportti komennolla:
 
 - poetry run invoke lint

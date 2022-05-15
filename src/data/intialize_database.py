@@ -1,7 +1,8 @@
-from src.data.database_connection import get_database_connection
-
-
-
+try:
+    from src.data.database_connection import get_database_connection
+except ModuleNotFoundError:
+    from database_connection import get_database_connection
+    
 def drop_tables(connection):
     cursor = connection.cursor()
 
@@ -14,24 +15,21 @@ def drop_tables(connection):
 
 def create_tables(connection):
     cursor = connection.cursor()
-    try:
-        cursor.execute('''
-            create table users (
-                id integer primary key,
-                username text,
-                password text,
-                score integer
-            );
-        ''')
-    except:
-        print('taulu on jo olemassa')
+    cursor.execute('''
+        create table users (
+            id integer primary key,
+            username text,
+            password text,
+            score integer,
+            active integer
+            );''')
+    connection.commit()
 
 def initialize_database1():
     connection = get_database_connection()
 
     drop_tables(connection)
     create_tables(connection)
-
 
 if __name__ == "__main__":
     initialize_database1()

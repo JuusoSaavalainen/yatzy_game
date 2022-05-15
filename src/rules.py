@@ -1,8 +1,11 @@
 class Checkrules:
+    '''Main class handling the scoring and checking if the score is even possible'''
     def __init__(self):
         pass
 
     def possibility_all(self, pos_list, num_list):
+        '''Checks all the possible options to score with the specisific hand
+        returns list with all the scores possible to choose'''
         for i in range(0, 6):
             pos_list[i] = True
         pos_list[12] = True
@@ -41,6 +44,8 @@ class Checkrules:
         return pos_list
 
     def points(self, score, pointer):
+        '''Method that takes pointer witch indicates the score 
+        player is trying to choose and returns the score accordingly to that'''
         if pointer == 12:
             return sum(score)
 

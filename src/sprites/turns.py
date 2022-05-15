@@ -7,6 +7,7 @@ direc_name = os.path.dirname(__file__)
 
 #class to turns obj
 class Turns(pygame.sprite.Sprite):
+    '''Class that is used to store the turnsleft pic/sprite'''
     def __init__(self, x=0, y=0):
         super().__init__()
 
