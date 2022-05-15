@@ -10,32 +10,31 @@ Yksi käyttäjärooli _norm käyttäjä_.
 
 ## Käyttöliittymäluonnos
 
-Sovellus koostuu 4 näkymästä.
+Sovellus koostuu 2 näkymästä. Näitä ovat pelinaikainen näkymä ja kirjautumis/rekistöröitymis/highscore näkymä.
 
-![](./kuvat/oikealupnnoskaytliit.png)
-
-Sovellus aukeaa näkymään josta voidaan tarkastella **Highscoreja** , **Kirjautua sisään**/**LOGIN** sekä rekistöröityä. Kirjautuminen hoidetaan alkunäkymässä, rekistöröinti vie toiseen ikkunaan. Tämän jälkeen rekistöröity nimi ja salasana sekä painikkeen **LOGIN** painaminen vie peliin jossa itse peli on toteutettu. Pelin päättymisen jälkeen on mahdollisuus ottaa uusintaottelu tai lopettaa. Myös **Highscorejen** tarkastelu on mahdollista.   
+Sovellus aukeaa näkymään josta voidaan tarkastella **Highscoreja** , **Kirjautua sisään**/**LOGIN** , rekistöröityä sekä tarkastella apuneovoja. Kirjautuminen hoidetaan alkunäkymässä, rekistöröinti voidaan suorittaa samassa ikkunassa sillä siinä ei tarvita muita tietoja kuin sisäänkirjautumisessa. Rekistyröitymisen jälkeen rekistöröity nimi ja salasana sekä painikkeen **LOGIN** painaminen vie pygame ikkunaan jossa itse peli on toteutettu. Pelin päättymisen jälkeen on mahdollisuus ottaa uusintaottelu tai lopettaa.
 
 ## Perusversion tarjoama toiminnallisuus
 
 ### Ennen kirjautumista
 - Käyttäjä voi siirtyä tarkastelemaan parhaita tuloksia laskevassa järjestyksessä 
 - Käyttäjä voi siirtyä kirjautumaan sisään
-- Käyttäjä voi luada uuden käyttäjän
+- Käyttäjä voi luada uuden käyttäjän/rekistöröityä
+- Käyttäjä voi katesella 'Help!' painikkeella suosituksia ja apua rekistöröitymiseen
 
 
 ### Kirjautumisen jälkeen
 - Automaattinen pelin aloitus
-- Käyttäjä voi heittää noppia 3 kertaa sekä valita säästettäviä noppia ensi kierrokselle. TEHTY
-- Käyttäjä voi päättää vuoron ennen 3 heittoa. TEHTY
-- Käyttäjä voi tilanteessa jossa mikään luokka ei sovi saatuihin noppiin päättää ~~ylivaamisen~~ kohteen. TEHTY
-- Vuoron päätyttyä käyttäjä voi valita sopivista paikoista sijoittaa saadut nopat. TEHTY
-- Käyttäjä voi tarkastella Highscoreja.
-- Pelin aikainen pelin päättäminen.
+- Käyttäjä voi heittää noppia 3 kertaa sekä valita säästettäviä noppia ensi kierrokselle.
+- Käyttäjä voi päättää vuoron ennen 3 heittoa.
+- Käyttäjä voi tilanteessa jossa mikään luokka ei sovi saatuihin noppiin päättää ~~ylivaamisen~~ kohteen.
+- Vuoron päätyttyä käyttäjä voi valita sopivista paikoista mihin tahtoo sijoittaa saadut nopat/tuloksen.
+- Pelaaja voi päättää pelin tai käynnistää sen uudelleen painamall näppäintä J.
 - Pelin loputtua uusintapelin mahdollisuus.
 
 ### Highscores
 - Yksinkertainen näkymä jossa käyttäjä voi tarkastella parhaita tuloksia
+- Nimet laskevassa järjestyksessä tuloksen perusteella
 
 
 ## Jatkokehitysideoita
