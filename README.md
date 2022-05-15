@@ -12,6 +12,8 @@
 
 [Arkkitehtuuri](https://github.com/JuusoSaavalainen/ot-harjoitusty-/blob/main/dokumentaatio/arkkitehtuuri.md)
 
+[Testaaminen](https://github.com/JuusoSaavalainen/yatzy_game/blob/main/dokumentaatio/testaaminen.md)
+
 
 ## Asentaminen
 
