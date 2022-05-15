@@ -1,4 +1,4 @@
-# Yatzy "Peli"
+# Yatzy :game_die: "Peli"
 
 ## Dokumentaatio
 
