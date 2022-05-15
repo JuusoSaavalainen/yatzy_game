@@ -13,4 +13,7 @@
 | 25.4 | 8    | sääntöjen lisääminen, logiikan parantelu, tominnallisuuden lisääminen, pisteiden jatko |
 | 26.4 | 2    | koodin siistimistä, testien lisäystä, virheiden tarkistusta |
 | 3.5 | 6    | koodin siistimistä, virheiden tarkistusta, tkinter ja pygame yhteen, sql parantelua, scoreboardin parannusta, highscoren rakentelu |
-| sum  | 47h  |  
+| 13.5 | 6    | refactorointia turhien asioiden poistamista, repoon lisää toimintoja, uudelleen käynnistys|
+| 14.5 | 8    | sisäänkirjautumisen loppuunvienti , virheilmoitukset ja repot |
+| 15.5 | 6    | testien tarkastelu ja sääntöjen testaus, docstringejä lisää, siistimistä, toiminnalisuuden tarkastelu |
+| sum  | 67h  |  
