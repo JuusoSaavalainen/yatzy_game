@@ -19,6 +19,7 @@ Tietokanta voidaan alustaa ja alustetaan tiedostossa [intialize_database.py](htt
 ### Kirjautuminen
 
 Sisäänkirjautumista kuvattu sekvenssikaaviolla 
+
 ![](https://github.com/JuusoSaavalainen/yatzy_game/blob/main/dokumentaatio/kuvat/login_sekvenssi.png)
 
 Tässä näkyy miten login painikkeen yhteydessä toimitaan. Käytännössä repositoryn metodeilla varmistetaan että kyseinen käyttäjä saa kirjautua ja se asetetaan aktiiviseksi jos näin on jonka jälkeen GUI sulkeutuu ja peli aukeaa. Jos jokin menee vikaan kuten väärät kirjautumistiedot näytetään ruudulla sille kuuluvaa error viestiä
